@@ -11,6 +11,7 @@ class AbsenLog extends Model
     protected $fillable = [
         'foto',
         'lat',
-        'long'
+        'long',
+        'mac_address'
     ];
 }

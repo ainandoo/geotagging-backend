@@ -21,7 +21,8 @@ class AbsenLogController extends Controller
         $validator = Validator::make($request->all(), [
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096',
             'lat' => 'required',
-            'long' => 'required'
+            'long' => 'required',
+            'mac_address' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -36,9 +37,14 @@ class AbsenLogController extends Controller
         $absenlog = AbsenLog::create([
             'foto' => $image->hashName(),
             'lat' => $request->lat,
-            'long' => $request->long
+            'long' => $request->long,
+            'mac_address' => $request->mac_address
         ]);
 
         return new AbsenLogResource(true, 'Absen log berhasil dicatat!', $absenlog);
+    }
+
+    public function show(AbsenLog $absenlog) {
+        return new AbsenLogResource(true, 'Data absen log ditemukan!', $absenlog);
     }
 }
