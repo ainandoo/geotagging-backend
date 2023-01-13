@@ -5,12 +5,12 @@
         @auth
         <h1>Dashboard</h1>
         <p class="lead">Only authenticated users can access this section.</p>
-        <a class="btn btn-lg btn-primary" href="https://codeanddeploy.com" role="button">View more tutorials here &raquo;</a>
+        <a class="btn btn-lg btn-primary" href="#" role="button">View more &raquo;</a>
         @endauth
 
         @guest
-        <h1>Homepage</h1>
-        <p class="lead">Your viewing the home page. Please login to view the restricted data.</p>
+        <h1>BBLK Surabaya Geotagging</h1>
+        <p class="lead">Selamat datang. Silakan login terlebih dahulu.</p>
         @endguest
     </div>
 @endsection
