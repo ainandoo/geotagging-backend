@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('foto');
             $table->string('lat');
             $table->string('long');
+            $table->string('mac_address');
             $table->timestamps();
         });
     }

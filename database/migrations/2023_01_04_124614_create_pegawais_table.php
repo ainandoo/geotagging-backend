@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('absen_logs', function (Blueprint $table) {
-            $table->string('mac_address')->after('long');
+        Schema::create('pegawais', function (Blueprint $table) {
+            $table->id();
+            $table->string('nip');
+            $table->string('nama_pegawai');
+            $table->string('status_pegawai');
+            $table->string('mac_address');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('absen_logs', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('pegawais');
     }
 };

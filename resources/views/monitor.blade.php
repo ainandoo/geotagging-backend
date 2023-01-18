@@ -15,6 +15,7 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
+                        <a href="/"> << Home</a>
                         <!-- <a href="{{ route('absenmonitor.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a> -->
                         <h2 class="text-center">Monitor absen</h2>
                         <hr>
@@ -49,7 +50,7 @@
                                 </tr>
                               @empty
                                   <div class="alert alert-danger">
-                                      Data Post belum Tersedia.
+                                      Data absen belum tersedia.
                                   </div>
                               @endforelse
                             </tbody>
