@@ -9,9 +9,15 @@ class AbsenLog extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'pegawai_id',
         'foto',
         'lat',
-        'long',
-        'mac_address'
+        'long'
+        // 'mac_addres
     ];
+
+    public function pegawai()
+    {
+        return $this->belongsTo( '\App\Models\Pegawai',  'pegawai_id', 'id' );
+    }
 }

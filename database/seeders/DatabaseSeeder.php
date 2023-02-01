@@ -16,9 +16,15 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Admin',
+            'username' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => bcrypt('1234'),
+            'email_verified_at' => now(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        \App\Models\Pegawai::factory(10)->create();
     }
 }

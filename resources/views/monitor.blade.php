@@ -16,16 +16,20 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <a href="/"> << Home</a>
+                        <!-- <br> -->
                         <!-- <a href="{{ route('absenmonitor.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a> -->
-                        <h2 class="text-center">Monitor absen</h2>
+                        <img src="{!! url('img/kemenkes-bblks.png') !!}" class="mx-auto d-block my-3" width="172" height="57">
+                        <h2 class="text-center">Monitor Absen Karyawan BBLKS</h2>
                         <hr>
                         <table class="table table-bordered">
                             <thead>
                               <tr>
+                                <th scope="col">NIP</th>
+                                <th scope="col">Nama</th>
                                 <th scope="col">Foto</th>
                                 <th scope="col">Lat</th>
                                 <th scope="col">Long</th>
-                                <th scope="col">Mac Address</th>
+                                <!-- <th scope="col">Mac Address</th> -->
                                 <th scope="col">Waktu Absen</th>
                               </tr>
                             </thead>
@@ -37,7 +41,7 @@
                                     </td>
                                     <td>{{ $post->lat }}</td>
                                     <td>{!! $post->long !!}</td>
-                                    <td>{{ $post->mac_address }}</td>
+                                    <!-- <td>{{ $post->mac_address }}</td> -->
                                     <td>{{ $post->created_at }}</td>
                                     <!-- <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('absenmonitor.destroy', $post->id) }}" method="POST">

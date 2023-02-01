@@ -14,4 +14,9 @@ class Pegawai extends Model
         'status_pegawai',
         'mac_address'
     ];
+
+    public function absen()
+    {
+        return $this->hasMany( '\App\Models\AbsenLog', 'pegawai_id', 'id' );
+    }
 }

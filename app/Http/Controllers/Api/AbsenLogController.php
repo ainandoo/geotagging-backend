@@ -19,10 +19,11 @@ class AbsenLogController extends Controller
 
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
+            'pegawai_id' => 'required',
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096',
             'lat' => 'required',
-            'long' => 'required',
-            'mac_address' => 'required'
+            'long' => 'required'
+            // 'mac_address' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -35,10 +36,11 @@ class AbsenLogController extends Controller
 
         //log absen
         $absenlog = AbsenLog::create([
+            'pegawai_id' => $request->pegawai_id,
             'foto' => $image->hashName(),
             'lat' => $request->lat,
-            'long' => $request->long,
-            'mac_address' => $request->mac_address
+            'long' => $request->long
+            // 'mac_address' => $request->mac_address
         ]);
 
         return new AbsenLogResource(true, 'Absen log berhasil dicatat!', $absenlog);

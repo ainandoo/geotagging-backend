@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('absen_logs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('pegawai_id');
             $table->string('foto');
             $table->string('lat');
             $table->string('long');
-            $table->string('mac_address');
+            // $table->string('mac_address');
             $table->timestamps();
         });
     }

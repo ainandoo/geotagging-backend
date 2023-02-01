@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nip');
             $table->string('nama_pegawai');
-            $table->string('status_pegawai');
-            $table->string('mac_address');
+            $table->string('status_pegawai')->nullable();
+            // $table->string('mac_address');
             $table->timestamps();
         });
     }
