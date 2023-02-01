@@ -13,7 +13,6 @@ class AbsenLog extends Model
         'foto',
         'lat',
         'long'
-        // 'mac_addres
     ];
 
     public function pegawai()

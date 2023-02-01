@@ -16,7 +16,6 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <a href="/"> << Home</a>
-                        <!-- <br> -->
                         <!-- <a href="{{ route('absenmonitor.create') }}" class="btn btn-md btn-success mb-3">TAMBAH POST</a> -->
                         <img src="{!! url('img/kemenkes-bblks.png') !!}" class="mx-auto d-block my-3" width="172" height="57">
                         <h2 class="text-center">Monitor Absen Karyawan BBLKS</h2>
@@ -36,8 +35,10 @@
                             <tbody>
                               @forelse ($absenmonitor as $post)
                                 <tr>
+                                    <td>{{ $post->pegawai->nip }}</td>
+                                    <td>{{ $post->pegawai->nama_pegawai }}</td>
                                     <td class="text-center">
-                                        <img src="{{ Storage::url('public/absenlogs/').$post->foto }}" class="rounded" style="width: 150px">
+                                    <img src="{{ asset('storage/absenlogs') . '/' . $post->foto }}" class="rounded" style="width: 150px">
                                     </td>
                                     <td>{{ $post->lat }}</td>
                                     <td>{!! $post->long !!}</td>

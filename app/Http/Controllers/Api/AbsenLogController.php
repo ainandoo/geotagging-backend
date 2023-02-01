@@ -23,7 +23,6 @@ class AbsenLogController extends Controller
             'foto' => 'required|image|mimes:jpeg,png,jpg,gif|max:4096',
             'lat' => 'required',
             'long' => 'required'
-            // 'mac_address' => 'required'
         ]);
 
         if ($validator->fails()) {
